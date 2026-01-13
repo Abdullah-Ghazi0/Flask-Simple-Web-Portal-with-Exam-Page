@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block title %}
+Meme of the day
+{% endblock %}
+
+
+{% block content %}
+<h1>😂 Meme of the Day</h1>
+<br>
+ {% if meme %}
+    <h2>{{ meme.title }}</h2>
+    <img src="{{ meme.image }}" style="max-width: 650px;" alt="no meme sorry" >
+ {% else %}
+    <h3>No memes available 😢</h3>
+ {% endif %}
+ <br>
+{% endblock %}

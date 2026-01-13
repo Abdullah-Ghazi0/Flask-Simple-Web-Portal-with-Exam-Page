@@ -3,6 +3,7 @@ from models import db, Users, Questions, Results
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.sql import func
 from simple_api import convertor
+from meme_api import memer
 
 app = Flask(__name__)
 
@@ -186,6 +187,14 @@ def result():
 @app.route("/data")
 def data():
     return jsonify(convertor())
+
+@app.route("/memes")
+def meme():
+    if "user_id" not in session:
+        return "<h1>You don't have access to this page!"
+    
+    meme = memer()
+    return render_template("meme.html", meme=meme)
 
 
 if __name__ == "__main__":
