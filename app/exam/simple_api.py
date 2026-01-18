@@ -1,5 +1,4 @@
-from models import Questions
-import json
+from ..models import Questions
 
 def to_dict(self):
     return {

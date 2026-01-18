@@ -1,11 +1,13 @@
 # Flask-Simple-Web-Portal-with-Exam-Page
-A beginner-friendly Flask web portal where users can register, log in, and access a dashboard with a simple exam system.
+A beginner-friendly Flask web portal where users can register, log in, and access a dashboard with a simple exam system and meme page.
 
 ## Users can:
 * Register and log in
 * Change their password
 * Delete their account
 * Take an exam created by the admin
+* View Memes
+
 ## Admins can:
 * Add exam questions to the database
 
@@ -19,6 +21,7 @@ This project is intended for learning purposes and demonstrates basic authentica
 * Admin can add exam questions
 * Users can take exams
 * Exam results are stored in the database
+* Users can also view Memes fetched from reddit using API
 
 
 ## Technologies Used:
@@ -29,13 +32,13 @@ This project is intended for learning purposes and demonstrates basic authentica
 - Werkzeug
 - HTML
 - Jinja2
-
+- Requests
 
 ## How to Run the Project:
 
 1. Clone the repository
 2. Install required dependencies: (pip install -r requirements.txt)
-3. Run the application: (python main.py)
+3. Run the application: (python run.py)
 4. Open your browser and visit: (http://localhost:5000)
 
 

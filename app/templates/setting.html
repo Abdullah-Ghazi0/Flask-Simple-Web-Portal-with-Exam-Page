@@ -6,7 +6,7 @@ Settings
 {% block content %}
 <br>
 <h2>Change Password</h2>
-<form action="/settings" method="POST">
+<form action="{{ url_for('auth.sett') }}" method="POST">
     <label for="old_pass">Current Password:</label>
     &nbsp;&nbsp;&nbsp;
     <input type="password" name="old_pass" placeholder="Enter Current Password" required>
@@ -25,7 +25,7 @@ Settings
 <br>
 <h2>Delete Account</h2>
 <br>
-<form action="/delete" method="POST">
+<form action="{{ url_for('auth.delete') }}" method="POST">
     <button type="submit" onclick="return confirm('Are you sure? This will permanently delete your account.')">
         Delete my Account
     </button>

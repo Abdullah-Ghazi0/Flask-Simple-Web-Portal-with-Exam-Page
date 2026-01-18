@@ -7,10 +7,10 @@
 </head>
 <body style="text-align: center;">
     <br>
-    <a href="/">Home</a>&nbsp;
-    <a href="/register">Register</a>&nbsp;
-    <a href="/login">Login</a>&nbsp;
-    <a href="/dashboard">Dashboard</a>&nbsp;
+    <a href="{{ url_for('home') }}">Home</a>&nbsp;
+    <a href="{{ url_for('auth.reg') }}">Register</a>&nbsp;
+    <a href="{{ url_for('auth.login') }}">Login</a>&nbsp;
+    <a href="{{ url_for('auth.dash') }}">Dashboard</a>&nbsp;
 
     {% block content %} {% endblock %}
 

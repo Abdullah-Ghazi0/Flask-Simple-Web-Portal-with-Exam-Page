@@ -5,7 +5,7 @@ Home
 
 {% block content %}
 <h1>Welcome to Exam!</h1>
-<form action="/result" method="POST">
+<form action="{{ url_for('exam.result') }}" method="POST">
   {% for q in questions %}
     <p>{{ loop.index }}. {{ q.q_text }}</p>
     <label>

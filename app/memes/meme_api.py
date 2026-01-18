@@ -1,5 +1,6 @@
 import requests
 import random
+
 def memer():
     url = "https://www.reddit.com/r/ProgrammerHumor/top.json?limit=5&t=day"
 

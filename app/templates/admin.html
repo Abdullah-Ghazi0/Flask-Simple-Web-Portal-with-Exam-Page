@@ -1,20 +1,12 @@
 {% extends 'base.html'%}
 {% block title %}
-Dashboard
+Admin
 {% endblock %}
 
 {% block content %}
-<h1>{{ name }}, Welcome to Dashboard!</h1>
+<h1>{{ name }}, Welcome to Admin Panel!</h1>
 <button>
-  <a href="/exam">Start Exam</a>
-</button>
-<br>
-<button>
-  <a href="/memes">Show me a Meme</a>
-</button>
-<br>
-<button>
-  <a href="/result">View Result</a>
+    <a href="{{ url_for('exam.create') }}">Add Questions</a>
 </button>
 <button>
 <a href="/settings">Setting</a>
