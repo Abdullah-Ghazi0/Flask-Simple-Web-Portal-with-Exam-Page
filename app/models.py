@@ -18,4 +18,8 @@ class Results(db.Model):
         user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
         score = db.Column(db.Integer, nullable = False)
     
+class Words(db.Model):
+        id = db.Column(db.Integer, primary_key = True)
+        word = db.Column(db.String(36), nullable = False)
+        k_char = db.Column(db.Integer, nullable = False)
 
