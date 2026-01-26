@@ -34,7 +34,7 @@ def guessing():
     if status == "win":
         flash("Congratulations! You Won")
     if status == "loss":
-        flash(f"GAME OVER! The word was :{session["word"]}")
+        flash(f"GAME OVER! The word was : {session["word"]}")
     
     return redirect(url_for("game.game_play"))
 

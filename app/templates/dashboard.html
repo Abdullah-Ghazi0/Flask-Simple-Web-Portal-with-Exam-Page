@@ -4,28 +4,29 @@ Dashboard
 {% endblock %}
 
 {% block content %}
-<h1>{{ name }}, Welcome to Dashboard!</h1>
-<button>
-  <a href="{{ url_for('exam.exam') }}">Start Exam</a>
+<h3>"{{ name }}", Welcome to Dashboard!</h3>
+<br>
+<button style="border: #ffffff; background-color: #ffffff;">
+  <a href="{{ url_for('exam.exam') }}" class="btn btn-info">Start Exam</a>
 </button>
 <br>
-<button>
-  <a href="{{ url_for('exam.result') }}">View Result</a>
+<button style="border: #ffffff; background-color: #ffffff;">
+  <a href="{{ url_for('exam.result') }}"" class="btn btn-primary">View Result</a>
 </button>
 <br><br>
-<button>
-  <a href="{{ url_for('meme.show_meme') }}">Show me a Meme</a>
+<button style="border: #ffffff; background-color: #ffffff;">
+  <a href="{{ url_for('meme.show_meme') }}" class="btn btn-danger">Show me a Meme</a>
 </button>
 <br>
-<button>
-  <a href="{{ url_for('game.game_play') }}">Play Hangman</a>
+<button style="border: #ffffff; background-color: #ffffff;">
+  <a href="{{ url_for('game.game_play') }}" class="btn btn-success">Play Hangman</a>
 </button>
 <br><br>
-<button>
-<a href="/settings">Setting</a>
+<button style="border: #ffffff; background-color: #ffffff;">
+<a href="/settings" class="btn btn-primary btn-sm">Setting</a>
 </button>
 <form action="/logout" method="POST">
-    <button type="submit">Logout</button>
+    <button type="submit" class="btn btn-secondary active" style="margin-top: 2px;">Logout</button>
 </form>
 {% with messages = get_flashed_messages() %}
   {% if messages %}

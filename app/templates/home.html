@@ -4,7 +4,7 @@ Home
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to home page!</h1>
+<h2>Welcome to home page!</h2>
 {% with messages = get_flashed_messages() %}
   {% if messages %}
     <ul>
@@ -14,5 +14,5 @@ Home
     </ul>
   {% endif %}
 {% endwith %}
-<img src="{{ url_for('static', filename='images/picture.png') }}" alt="programmer">
+<img src="{{ url_for('static', filename='images/picture.png') }}" class="img-fluid" alt="programmer">
 {% endblock %}

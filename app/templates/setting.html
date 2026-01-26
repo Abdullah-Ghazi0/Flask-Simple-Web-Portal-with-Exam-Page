@@ -5,10 +5,10 @@ Settings
 
 {% block content %}
 <br>
-<h2>Change Password</h2>
+<h4>Change Password</h4>
 <form action="{{ url_for('auth.sett') }}" method="POST">
     <label for="old_pass">Current Password:</label>
-    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;
     <input type="password" name="old_pass" placeholder="Enter Current Password" required>
     <br>
     <label for="new_pass">New Password:</label>
@@ -19,14 +19,14 @@ Settings
     <input type="password" name="conf_pass" placeholder="Confirm Password" required>
     <br>
     <br>
-    <button type="submit">Change Password</button>
+    <button class="btn btn-secondary active" type="submit">Change Password</button>
 </form>
 <br>
 <br>
-<h2>Delete Account</h2>
+<h4>Delete Account</h4>
 <br>
 <form action="{{ url_for('auth.delete') }}" method="POST">
-    <button type="submit" onclick="return confirm('Are you sure? This will permanently delete your account.')">
+    <button class="btn btn-secondary active" type="submit" onclick="return confirm('Are you sure? This will permanently delete your account.')">
         Delete my Account
     </button>
 </form>

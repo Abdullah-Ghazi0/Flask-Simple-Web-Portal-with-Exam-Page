@@ -4,8 +4,8 @@ Hangman
 {% endblock %}
 
 {% block content %}
-<br><br>
-HANGMAN!
+<br>
+<h3>HANGMAN!</h3>
 <br>
 {% with messages = get_flashed_messages() %}
  {% if messages %}
@@ -15,18 +15,18 @@ HANGMAN!
  {% endif %}
 {% endwith %}
 <br>
- <h1>{{ word_shown }}</h1>
+ <h3>{{ word_shown }}</h3>
 <br>
 <form action="{{ url_for('game.guessing') }}" method="POST">
     <label for="Letter:"></label>
     <input type="text", maxlength="1" name="char" required autofocus autocomplete="off">
-    <button type="submit">Guess</button>
+    <button type="submit" class="btn btn-dark">Guess</button>
 </form>
- <h2>Lives:{{ lives }}</h2>
+ <h5>Lives:{{ lives }}</h5>
 <br>
     <img src="{{ url_for('static', filename='images/state' + mistakes|string + '.png') }}" alt="Hangman">
     <br>
-    <button>
-        <a href="{{ url_for('game.again') }}">Play Again</a>
+    <button style="border: #ffffff; background-color: #ffffff;">
+        <a href="{{ url_for('game.again') }}" class="btn btn-success">Play Again</a>
     </button>
 {% endblock %}
