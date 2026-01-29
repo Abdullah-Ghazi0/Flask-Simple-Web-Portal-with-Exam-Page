@@ -1,0 +1,7 @@
+.navbar_style {
+    background-color: #29292b;
+     margin-top: -25px;
+     padding: 8px; color: white;
+     --bs-nav-link-color: white;
+     --bs-nav-link-hover-color: #8d8d8d;
+}

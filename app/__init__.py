@@ -16,11 +16,13 @@ def create_app():
     from .exam.routes import exam_bp
     from .auth.routes import auth_bp
     from .game.routes import game_bp
+    from .message.routes import msg_bp
 
     app.register_blueprint(meme_bp)
     app.register_blueprint(exam_bp)
     app.register_blueprint(auth_bp)
     app.register_blueprint(game_bp)
+    app.register_blueprint(msg_bp)
 
     @app.route("/")
     def home():

@@ -5,22 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} Base {% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body style="text-align: center;">
     <br>
-<ul class="nav justify-content-center" style="background-color: #29292b; margin-top: -25px; padding: 8px; color: white; --bs-nav-link-color: white; --bs-nav-link-hover-color: #8d8d8d;">
+<ul class="nav justify-content-center navbar_style">
   <li class="nav-item">
     <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
   </li>
+  {% if 'user_id' in session %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('meme.show_meme') }}">Memes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('game.game_play') }}">Hangman</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('message.inbox') }}">Inbox</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('auth.dash') }}">Dashboard</a>
+  </li>
+  {% else %}
   <li class="nav-item">
     <a class="nav-link" href="{{ url_for('auth.reg') }}">Register</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('auth.dash') }}">Dashboard</a>
-  </li>
+  {% endif %}
 </ul>
 <br>
 

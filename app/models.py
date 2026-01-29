@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
+from datetime import datetime, timezone
 
 db = SQLAlchemy()
 
@@ -23,3 +24,12 @@ class Words(db.Model):
         word = db.Column(db.String(36), nullable = False)
         k_char = db.Column(db.Integer, nullable = False)
 
+class Messages(db.Model):
+        id = db.Column(db.Integer, primary_key = True)
+        s_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+        r_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+        content = db.Column(db.String(500), nullable = False)
+        time = db.Column(db.DateTime, index=True, default=lambda: datetime.now(timezone.utc))
+
+        sender = db.relationship('Users', foreign_keys=[s_id])
+        reciever = db.relationship('Users', foreign_keys=[r_id])
